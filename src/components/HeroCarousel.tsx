@@ -69,7 +69,7 @@ const HeroCarousel = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
         <div className="max-w-6xl mx-auto">
           {/* Logo */}
-          <div className="mb-8 animate-bounce">
+          <div className="mb-8">
             <span className="text-7xl md:text-9xl drop-shadow-2xl">🌎</span>
             <h1 className="text-5xl md:text-7xl font-montserrat font-bold text-white mt-6 drop-shadow-lg">
               Travelly
