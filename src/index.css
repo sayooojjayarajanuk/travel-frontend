@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Travelly Gen-Z Design System - All colors, gradients, fonts, etc defined here. 
-All colors MUST be HSL.
-*/
+/* International Standard Design System - Premium Typography & Spacing */
 
 @layer base {
   :root {
-    /* Core Brand Colors */
+    /* Core Brand Colors - International Standards */
     --background: 216 100% 98.4%; /* #F8FBFF */
     --foreground: 245 24% 9%; /* #14142B */
     
@@ -21,53 +19,85 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 245 24% 9%;
 
-    /* Primary Brand Blue */
+    /* Primary Brand Blue - International Standard */
     --primary: 225 100% 50%; /* #0047FF */
     --primary-foreground: 0 0% 100%;
     --primary-glow: 225 100% 70%;
+    --primary-variant: 225 100% 40%;
 
-    /* Accent Yellow */
+    /* Accent Yellow - Gold Standard */
     --accent: 51 100% 50%; /* #FFD600 */
     --accent-foreground: 245 24% 9%;
     --accent-glow: 51 100% 70%;
+    --accent-variant: 45 100% 45%;
 
-    /* Secondary Teal */
+    /* Secondary Teal - Premium */
     --secondary: 172 100% 45.5%; /* #00E7C3 */
     --secondary-foreground: 0 0% 100%;
     --secondary-glow: 172 100% 65%;
+    --secondary-variant: 172 100% 35%;
 
-    /* Text Colors */
+    /* Professional Text Hierarchy */
     --text-primary: 245 24% 9%; /* #14142B */
     --text-secondary: 242 19% 38%; /* #51516C */
     --text-muted: 220 15% 62%; /* #8F99A8 */
+    --text-disabled: 220 15% 75%;
 
-    --muted: 220 13% 91%;
+    --muted: 220 13% 95%;
     --muted-foreground: 220 15% 62%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
     --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --input: 220 13% 95%;
     --ring: 225 100% 50%;
 
-    /* Gradients */
+    /* Premium Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
     --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-card: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--surface) / 0.8));
+    --gradient-card: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--surface) / 0.95));
+    --gradient-premium: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--secondary)));
 
-    /* Shadows */
-    --shadow-card: 0 4px 18px hsl(var(--primary) / 0.07);
-    --shadow-hover: 0 8px 25px hsl(var(--primary) / 0.15);
+    /* International Standard Shadows */
+    --shadow-xs: 0 1px 2px hsl(var(--primary) / 0.05);
+    --shadow-sm: 0 1px 3px hsl(var(--primary) / 0.1), 0 1px 2px hsl(var(--primary) / 0.06);
+    --shadow-md: 0 4px 6px hsl(var(--primary) / 0.07), 0 2px 4px hsl(var(--primary) / 0.06);
+    --shadow-lg: 0 10px 15px hsl(var(--primary) / 0.1), 0 4px 6px hsl(var(--primary) / 0.05);
+    --shadow-xl: 0 20px 25px hsl(var(--primary) / 0.1), 0 10px 10px hsl(var(--primary) / 0.04);
+    --shadow-2xl: 0 25px 50px hsl(var(--primary) / 0.25);
+    --shadow-card: var(--shadow-lg);
+    --shadow-hover: var(--shadow-xl);
     --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
 
-    /* Animations */
+    /* Premium Animations */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    --radius: 1rem; /* 16px as specified */
+    /* International Standard Spacing & Typography */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-2xl: 3rem; /* 48px */
+    --spacing-3xl: 4rem; /* 64px */
+
+    --radius-sm: 0.5rem; /* 8px */
+    --radius: 0.75rem; /* 12px */
+    --radius-lg: 1rem; /* 16px */
+    --radius-xl: 1.5rem; /* 24px */
 
     --sidebar-background: 0 0% 98%;
 
@@ -132,27 +162,87 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-inter;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Typography */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-montserrat font-bold;
+  /* International Typography Standards */
+  h1 {
+    @apply font-montserrat font-bold text-4xl lg:text-6xl leading-tight tracking-tight;
   }
 
-  /* Glass morphism utility */
+  h2 {
+    @apply font-montserrat font-bold text-3xl lg:text-4xl leading-tight tracking-tight;
+  }
+
+  h3 {
+    @apply font-montserrat font-semibold text-2xl lg:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply font-montserrat font-semibold text-xl lg:text-2xl leading-snug;
+  }
+
+  h5 {
+    @apply font-montserrat font-medium text-lg lg:text-xl leading-normal;
+  }
+
+  h6 {
+    @apply font-montserrat font-medium text-base lg:text-lg leading-normal;
+  }
+
+  p {
+    @apply font-inter leading-relaxed;
+  }
+
+  /* Premium Glass Morphism */
   .glass {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* Smooth animations */
+  /* Premium Animation Classes */
+  .animate-fast {
+    transition: var(--transition-fast);
+  }
+
   .animate-smooth {
     transition: var(--transition-smooth);
   }
 
+  .animate-slow {
+    transition: var(--transition-slow);
+  }
+
   .animate-bounce {
     transition: var(--transition-bounce);
+  }
+
+  .animate-spring {
+    transition: var(--transition-spring);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply animate-smooth hover:-translate-y-1 hover:shadow-hover;
+  }
+
+  .hover-scale {
+    @apply animate-smooth hover:scale-105;
+  }
+
+  .hover-glow {
+    @apply animate-smooth hover:shadow-glow;
   }
 
   /* Custom scrollbar */

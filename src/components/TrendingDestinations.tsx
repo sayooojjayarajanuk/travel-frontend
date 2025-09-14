@@ -39,21 +39,21 @@ const TrendingDestinations = () => {
   ];
 
   return (
-    <section className="py-12">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-montserrat font-bold text-center mb-8 text-text-primary">
+    <section className="py-16">
+      <div className="container mx-auto px-6">
+        <h2 className="text-4xl font-montserrat font-bold text-center mb-12 text-text-primary">
           Trending Destinations
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {destinations.map((destination) => (
-            <Card key={destination.id} className="group cursor-pointer animate-smooth hover:shadow-hover hover:-translate-y-1 border-border/20">
+            <Card key={destination.id} className="group cursor-pointer hover-lift border-border/10 overflow-hidden">
               <CardContent className="p-0">
-                <div className="relative overflow-hidden rounded-t-[var(--radius)]">
+                <div className="relative overflow-hidden rounded-t-lg">
                   <img
                     src={destination.image}
                     alt={destination.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 animate-smooth"
+                    className="w-full h-56 object-cover group-hover:scale-110 animate-slow"
                   />
                   <div className="absolute top-3 right-3">
                     <Badge variant="secondary" className="bg-surface/90 text-text-primary">
@@ -68,13 +68,13 @@ const TrendingDestinations = () => {
                   </div>
                 </div>
                 
-                <div className="p-4 space-y-2">
+                <div className="p-6 space-y-3">
                   <div className="flex items-center text-text-muted text-sm">
                     <MapPin className="w-4 h-4 mr-1" />
                     {destination.name}
                   </div>
-                  <h3 className="font-semibold text-text-primary">{destination.name}</h3>
-                  <p className="text-primary font-bold">{destination.price}</p>
+                  <h3 className="font-semibold text-lg text-text-primary">{destination.name}</h3>
+                  <p className="text-primary font-bold text-lg">{destination.price}</p>
                 </div>
               </CardContent>
             </Card>

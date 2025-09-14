@@ -66,32 +66,32 @@ const HeroCarousel = () => {
       ))}
 
       {/* Content Overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+        <div className="max-w-6xl mx-auto">
           {/* Logo */}
-          <div className="mb-6 animate-bounce">
-            <span className="text-6xl md:text-8xl">🌎</span>
-            <h1 className="text-4xl md:text-6xl font-montserrat font-bold text-white mt-4">
+          <div className="mb-8 animate-bounce">
+            <span className="text-7xl md:text-9xl drop-shadow-2xl">🌎</span>
+            <h1 className="text-5xl md:text-7xl font-montserrat font-bold text-white mt-6 drop-shadow-lg">
               Travelly
             </h1>
           </div>
 
           {/* Current slide content */}
-          <div className="space-y-4 mb-8">
-            <p className="text-accent text-lg md:text-xl font-medium">
+          <div className="space-y-6 mb-12">
+            <p className="text-accent text-xl md:text-2xl font-semibold uppercase tracking-wider">
               {slides[currentSlide].caption}
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight drop-shadow-lg">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               {slides[currentSlide].description}
             </p>
           </div>
 
           {/* CTA Button */}
           <Link to="/register">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4 h-auto">
+            <Button variant="hero" size="xl" className="text-xl px-12 py-6 h-auto shadow-2xl">
               Get Started
             </Button>
           </Link>

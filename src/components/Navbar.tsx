@@ -19,24 +19,24 @@ const Navbar = () => {
   const isActive = (route: string) => location.pathname === route;
 
   return (
-    <nav className="sticky top-0 z-50 glass border-b border-border/20">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="sticky top-0 z-50 glass border-b border-border/10">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-18">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 animate-smooth hover:scale-105">
-            <span className="text-2xl">🌎</span>
-            <span className="text-xl font-montserrat font-bold bg-gradient-primary bg-clip-text text-transparent">
+          <Link to="/" className="flex items-center space-x-3 animate-smooth hover:scale-105">
+            <span className="text-3xl">🌎</span>
+            <span className="text-2xl font-montserrat font-bold bg-gradient-primary bg-clip-text text-transparent">
               Travelly
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.route}
                 to={link.route}
-                className={`font-medium animate-smooth hover:text-primary relative ${
+                className={`font-semibold text-sm uppercase tracking-wide animate-smooth hover:text-primary relative ${
                   isActive(link.route) 
                     ? "text-primary" 
                     : "text-text-secondary hover:text-primary"
@@ -44,7 +44,7 @@ const Navbar = () => {
               >
                 {link.label}
                 {isActive(link.route) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-primary rounded-full"></div>
+                  <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-primary rounded-full"></div>
                 )}
               </Link>
             ))}
